@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="Hi,I’m mli1997.">
+<meta name="description" content="Calculate a + b and output the sum in standard format — that is, the digits must be separated into groups of three by commas (unless there are less than four digits).Input   Each input file contains">
 <meta property="og:type" content="website">
-<meta property="og:title" content="about">
+<meta property="og:title" content="A+B Format (20)-PAT甲级真题">
 <meta property="og:url" content="http://yoursite.com/about/index.html">
 <meta property="og:site_name" content="Welcome to my blog">
-<meta property="og:description" content="Hi,I’m mli1997.">
+<meta property="og:description" content="Calculate a + b and output the sum in standard format — that is, the digits must be separated into groups of three by commas (unless there are less than four digits).Input   Each input file contains">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-09-27T08:26:38.590Z">
+<meta property="og:updated_time" content="2018-09-29T14:58:33.103Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="about">
-<meta name="twitter:description" content="Hi,I’m mli1997.">
+<meta name="twitter:title" content="A+B Format (20)-PAT甲级真题">
+<meta name="twitter:description" content="Calculate a + b and output the sum in standard format — that is, the digits must be separated into groups of three by commas (unless there are less than four digits).Input   Each input file contains">
 
 
 
@@ -125,7 +125,7 @@
 
 
 
-  <title>about | Welcome to my blog</title>
+  <title>A+B Format (20)-PAT甲级真题 | Welcome to my blog</title>
   
 
 
@@ -289,7 +289,7 @@
     <div class="post-block page">
       <header class="post-header">
 
-	<h1 class="post-title" itemprop="name headline">about</h1>
+	<h1 class="post-title" itemprop="name headline">A+B Format (20)-PAT甲级真题</h1>
 
 
 
@@ -301,8 +301,26 @@
       <div class="post-body">
         
         
-          <p>Hi,I’m mli1997.</p>
+           <font size="3" color="#4A708B">Calculate a + b and output the sum in standard format — that is, the digits must be separated into groups of three by commas (unless there are less than four digits).<br><br><font color="#352712">Input</font>
 
+
+<p>Each input file contains one test case. Each case contains a pair of integers a and b where -1000000 &lt;= a, b &lt;= 1000000. The numbers are separated by a space.</p>
+<font color="#352712">Output</font>
+
+
+<p>For each test case, you should output the sum of a and b in one line. The sum must be written in the standard format.</p>
+<font color="#352712">Sample Input</font>
+
+<p>-1000000 9</p>
+<font color="#352712">Sample Output</font>
+
+<p>-999,991<br></p></font><p></p>
+<hr>
+<font size="3" color="#352712">题目大意：计算A+B的和，然后以每三位加一个”,”的格式输出.</font>
+
+<p><font size="3" color="#F08080">分析：把a+b的和转为字符串s。除了第一位是负号的情况，只要当前位的下标i满足(i + 1) % 3 == len % 3并且i不是最后一位，就在逐位输出的时候在该位输出后的后面加上一个逗号</font></p>
+<pre><code><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"> </span>&#123;&#125;</span><br></pre></td></tr></table></figure>
+</code></pre>
         
       </div>
       
