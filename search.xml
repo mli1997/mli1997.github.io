@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title></title>
+    <url>%2Fpython%E4%B9%8B%E6%8E%92%E5%BA%8F%E9%97%AE%E9%A2%98%2F</url>
+    <content type="text"><![CDATA[关于python2与python3中的排序问题 如下： a = [1,3,5,2,4] a.sort() 或者 print (sorted(a))但sorted()也是一个高阶函数，它可以接收一个比较函数来实现自定义排序，比较函数的定义是，传入两个待比较的元素 x, y，如果 x 应该排在 y 的前面，返回 -1，如果 x 应该排在 y 的后面，返回 1。如果 x 和 y 相等，返回 0。比如们实现倒序： python2中： def reversed_cmp(x, y): if x &gt; y: return -1 if x &lt; y: return 1 return 0 sorted([36, 5, 12, 9, 21]，reversed_cmp) 但是在python3中因为删除了cmp，导致sorded不能直接使用了简单排序不变，带函数的排序，这里sorted增加了两个参数 key=和reverse=(可选）： from functools import cmp_to_key def reversed_cmp(x, y): if x &gt; y: return -1 if x &lt; y: return 1 return 0 print(sorted([1, 2, 5, 22, 0, 7, 9], key=cmp_to_key(reversed_cmp))) 也可加第三个参数实现倒序： sorted([1, 2, 5, 22, 0, 7, 9],reverse=True) sorted() 函数可以接收任何的 iterable： sorted({1: &#39;D&#39;, 2: &#39;B&#39;, 3: &#39;B&#39;, 4: &#39;E&#39;, 5: &#39;A&#39;}) [1, 2, 3, 4, 5] 又如利用偏函数的排序： import functools s = functools.partial(sorted, key=lambda x: x.upper()) print (s([&apos;bob&apos;, &apos;about&apos;, &apos;Zoo&apos;, &apos;Credit&apos;])) END]]></content>
+  </entry>
+  <entry>
     <title><![CDATA[A+B Format (20)-PAT甲级真题]]></title>
     <url>%2F1001%2F</url>
     <content type="text"><![CDATA[Calculate a + b and output the sum in standard format — that is, the digits must be separated into groups of three by commas (unless there are less than four digits).Input Each input file contains one test case. Each case contains a pair of integers a and b where -1000000 &lt;= a, b &lt;= 1000000. The numbers are separated by a space. Output For each test case, you should output the sum of a and b in one line. The sum must be written in the standard format. Sample Input -1000000 9 Sample Output -999,991 题目大意：计算A+B的和，然后以每三位加一个”,”的格式输出. 分析：把a+b的和转为字符串s。除了第一位是负号的情况，只要当前位的下标i满足(i + 1) % 3 == len % 3并且i不是最后一位，就在逐位输出的时候在该位输出后的后面加上一个逗号 1234#include &lt;iostream&gt;using namespace std;int main() &#123;&#125;]]></content>
