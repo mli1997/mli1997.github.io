@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="Calculate a + b and output the sum in standard format — that is, the digits must be separated into groups of three by commas (unless there are less than four digits).Input   Each input file contains">
+<meta name="description" content="title:关于python2与python3中的排序问题 如下：           a = [1,3,5,2,4]                a.sort()   或者 print (sorted(a))但sorted()也是一个高阶函数，它可以接收一个比较函数来实现自定义排序，比较函数的定义是，传入两个待比较的元素 x, y，如果 x 应该排在 y 的前面，返回 -1，如果 x 应该排">
 <meta property="og:type" content="article">
-<meta property="og:title" content="A+B Format (20)-PAT甲级真题">
-<meta property="og:url" content="http://yoursite.com/1001/index.html">
+<meta property="og:title" content="Welcome to my blog">
+<meta property="og:url" content="http://yoursite.com/python排序/index.html">
 <meta property="og:site_name" content="Welcome to my blog">
-<meta property="og:description" content="Calculate a + b and output the sum in standard format — that is, the digits must be separated into groups of three by commas (unless there are less than four digits).Input   Each input file contains">
+<meta property="og:description" content="title:关于python2与python3中的排序问题 如下：           a = [1,3,5,2,4]                a.sort()   或者 print (sorted(a))但sorted()也是一个高阶函数，它可以接收一个比较函数来实现自定义排序，比较函数的定义是，传入两个待比较的元素 x, y，如果 x 应该排在 y 的前面，返回 -1，如果 x 应该排">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-09-28T13:48:43.651Z">
+<meta property="og:updated_time" content="2018-10-11T15:25:53.892Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="A+B Format (20)-PAT甲级真题">
-<meta name="twitter:description" content="Calculate a + b and output the sum in standard format — that is, the digits must be separated into groups of three by commas (unless there are less than four digits).Input   Each input file contains">
+<meta name="twitter:title" content="Welcome to my blog">
+<meta name="twitter:description" content="title:关于python2与python3中的排序问题 如下：           a = [1,3,5,2,4]                a.sort()   或者 print (sorted(a))但sorted()也是一个高阶函数，它可以接收一个比较函数来实现自定义排序，比较函数的定义是，传入两个待比较的元素 x, y，如果 x 应该排在 y 的前面，返回 -1，如果 x 应该排">
 
 
 
@@ -119,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/1001/"/>
+  <link rel="canonical" href="http://yoursite.com/python排序/"/>
 
 
 
 
 
-  <title>A+B Format (20)-PAT甲级真题 | Welcome to my blog</title>
+  <title> | Welcome to my blog</title>
   
 
 
@@ -296,7 +296,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/1001/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/python排序/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="mli1997">
@@ -313,7 +313,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">A+B Format (20)-PAT甲级真题</h1>
+          <h1 class="post-title" itemprop="name headline"></h1>
         
 
         <div class="post-meta">
@@ -325,8 +325,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-27T23:15:04+08:00">
-                2018-09-27
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-11T23:26:12+08:00">
+                2018-10-11
               </time>
             
 
@@ -363,26 +363,23 @@
       
 
       
-         <font size="3" color="#4A708B">Calculate a + b and output the sum in standard format — that is, the digits must be separated into groups of three by commas (unless there are less than four digits).<br><br><font color="#352712">Input</font>
+        <hr>
+<h2 id="title-关于python2与python3中的排序问题"><a href="#title-关于python2与python3中的排序问题" class="headerlink" title="title:关于python2与python3中的排序问题"></a>title:关于python2与python3中的排序问题</h2> <font size="3" color="#4A708B">如下：<br>           <code>a = [1,3,5,2,4]  
+             a.sort()</code><br><br><br>   或者 <code>print (sorted(a))</code><br><br>但sorted()也是一个高阶函数，它可以接收一个比较函数来实现自定义排序，比较函数的定义是，传入两个待比较的元素 x, y，如果 x 应该排在 y 的前面，返回 -1，如果 x 应该排在 y 的后面，返回 1。如果 x 和 y 相等，返回 0。<br>比如们实现倒序：</font>  
 
+<font color="#352712">python2中：</font> 
 
-<p>Each input file contains one test case. Each case contains a pair of integers a and b where -1000000 &lt;= a, b &lt;= 1000000. The numbers are separated by a space.</p>
-<font color="#352712">Output</font>
+ <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">reversed_cmp</span><span class="params">(x, y)</span>:</span>  </span><br><span class="line">   <span class="keyword">if</span> x &gt; y:</span><br><span class="line">   <span class="keyword">return</span> <span class="number">-1</span></span><br><span class="line">   <span class="keyword">if</span> x &lt; y:</span><br><span class="line">   <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line">   <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">   sorted([<span class="number">36</span>, <span class="number">5</span>, <span class="number">12</span>, <span class="number">9</span>, <span class="number">21</span>]，reversed_cmp)</span><br></pre></td></tr></table></figure>
+<font size="3" color="#F08080">但是在python3中因为删除了cmp，导致sorded不能直接使用了<br>简单排序不变，带函数的排序，这里sorted增加了两个参数 key=和reverse=(可选）：</font><br> <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> functools <span class="keyword">import</span> cmp_to_key  </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">reversed_cmp</span><span class="params">(x, y)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> x &gt; y:</span><br><span class="line">    <span class="keyword">return</span> <span class="number">-1</span></span><br><span class="line">    <span class="keyword">if</span> x &lt; y:</span><br><span class="line">    <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">    print(sorted([<span class="number">1</span>, <span class="number">2</span>, <span class="number">5</span>, <span class="number">22</span>, <span class="number">0</span>, <span class="number">7</span>, <span class="number">9</span>], key=cmp_to_key(reversed_cmp)))</span><br></pre></td></tr></table></figure><br><br><font size="3" color="#F08080">也可加第三个参数实现倒序：</font>
 
+<p> <code>sorted([1, 2, 5, 22, 0, 7, 9],reverse=True)</code>  </p>
+<p> sorted() 函数可以接收任何的 iterable：<br>        <code>sorted({1: &#39;D&#39;, 2: &#39;B&#39;, 3: &#39;B&#39;, 4: &#39;E&#39;, 5: &#39;A&#39;})</code><br>       <code>[1, 2, 3, 4, 5]</code>  </p>
+<font size="3" color="#F08080">又如利用偏函数的排序：</font>
 
-<p>For each test case, you should output the sum of a and b in one line. The sum must be written in the standard format.</p>
-<font color="#352712">Sample Input</font>
-
-<p>-1000000 9</p>
-<font color="#352712">Sample Output</font>
-
-<p>-999,991<br></p></font><p></p>
-<hr>
-<font size="3" color="#352712">题目大意：计算A+B的和，然后以每三位加一个”,”的格式输出.</font>
-
-<p><font size="3" color="#F08080">分析：把a+b的和转为字符串s。除了第一位是负号的情况，只要当前位的下标i满足(i + 1) % 3 == len % 3并且i不是最后一位，就在逐位输出的时候在该位输出后的后面加上一个逗号</font></p>
-<pre><code><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"> </span>&#123;&#125;</span><br></pre></td></tr></table></figure>
-</code></pre>
+<pre><code>import functools   
+s = functools.partial(sorted, key=lambda x: x.upper())
+print (s([&apos;bob&apos;, &apos;about&apos;, &apos;Zoo&apos;, &apos;Credit&apos;]))   
+</code></pre><font size="5">END</font>
       
     </div>
     
@@ -406,15 +403,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/1001/" rel="next" title="A+B Format (20)-PAT甲级真题">
+                <i class="fa fa-chevron-left"></i> A+B Format (20)-PAT甲级真题
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/python排序/" rel="prev" title="">
-                 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -466,8 +463,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -509,6 +515,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#title-关于python2与python3中的排序问题"><span class="nav-number">1.</span> <span class="nav-text">title:关于python2与python3中的排序问题</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
