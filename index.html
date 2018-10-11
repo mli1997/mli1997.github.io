@@ -312,7 +312,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/python排序/" itemprop="url">关于python2与python3中的排序问题</a></h1>
+                <a class="post-title-link" href="/python排序/" itemprop="url">Python之排序问题</a></h1>
         
 
         <div class="post-meta">
@@ -368,19 +368,11 @@
              a.sort()</code><br>   或者 <code>print (sorted(a))</code><br><br>但sorted()也是一个高阶函数，它可以接收一个比较函数来实现自定义排序，比较函数的定义是，传入两个待比较的元素 x, y，如果 x 应该排在 y 的前面，返回 -1，如果 x 应该排在 y 的后面，返回 1。如果 x 和 y 相等，返回 0。<br>比如们实现倒序：<br><br><font color="#352712">python2中：</font> 
 
  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">reversed_cmp</span><span class="params">(x, y)</span>:</span>  </span><br><span class="line">   <span class="keyword">if</span> x &gt; y:</span><br><span class="line">   <span class="keyword">return</span> <span class="number">-1</span></span><br><span class="line">   <span class="keyword">if</span> x &lt; y:</span><br><span class="line">   <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line">   <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">   sorted([<span class="number">36</span>, <span class="number">5</span>, <span class="number">12</span>, <span class="number">9</span>, <span class="number">21</span>]，reversed_cmp)</span><br></pre></td></tr></table></figure>
-<font size="3" color="#F08080">但是在python3中因为删除了cmp，导致sorded不能直接使用了<br>简单排序不变，带函数的排序，这里sorted增加了两个参数 key=和reverse=(可选）：</font> 
-
- <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> functools <span class="keyword">import</span> cmp_to_key  </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">reversed_cmp</span><span class="params">(x, y)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> x &gt; y:</span><br><span class="line">    <span class="keyword">return</span> <span class="number">-1</span></span><br><span class="line">    <span class="keyword">if</span> x &lt; y:</span><br><span class="line">    <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">    print(sorted([<span class="number">1</span>, <span class="number">2</span>, <span class="number">5</span>, <span class="number">22</span>, <span class="number">0</span>, <span class="number">7</span>, <span class="number">9</span>], key=cmp_to_key(reversed_cmp)))</span><br></pre></td></tr></table></figure>
-<font size="3" color="#F08080">也可加第三个参数实现倒序：</font>
+<font size="3" color="#F08080">但是在python3中因为删除了cmp，导致sorded不能直接使用了<br>简单排序不变，带函数的排序，这里sorted增加了两个参数 key=和reverse=(可选）：<br><br> <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> functools <span class="keyword">import</span> cmp_to_key  </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">reversed_cmp</span><span class="params">(x, y)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> x &gt; y:</span><br><span class="line">    <span class="keyword">return</span> <span class="number">-1</span></span><br><span class="line">    <span class="keyword">if</span> x &lt; y:</span><br><span class="line">    <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">    print(sorted([<span class="number">1</span>, <span class="number">2</span>, <span class="number">5</span>, <span class="number">22</span>, <span class="number">0</span>, <span class="number">7</span>, <span class="number">9</span>], key=cmp_to_key(reversed_cmp)))</span><br></pre></td></tr></table></figure><br><br><font size="3" color="#F08080">也可加第三个参数实现倒序：</font>
 
 <p> <code>sorted([1, 2, 5, 22, 0, 7, 9],reverse=True)</code>  </p>
 <p> sorted() 函数可以接收任何的 iterable：<br>        <code>sorted({1: &#39;D&#39;, 2: &#39;B&#39;, 3: &#39;B&#39;, 4: &#39;E&#39;, 5: &#39;A&#39;})</code><br>       <code>[1, 2, 3, 4, 5]</code>  </p>
-<font size="3" color="#F08080">又如利用偏函数的排序：</font>
-
-<pre><code>import functools   
-s = functools.partial(sorted, key=lambda x: x.upper())
-print (s([&apos;bob&apos;, &apos;about&apos;, &apos;Zoo&apos;, &apos;Credit&apos;]))   
-</code></pre><font size="5">END</font></font>
+<font size="3" color="#F08080">又如利用偏函数的排序：<br><br>    import functools<br>    s = functools.partial(sorted, key=lambda x: x.upper())<br>    print (s([‘bob’, ‘about’, ‘Zoo’, ‘Credit’]))<br><br><br><br><font size="5">END</font></font></font></font>
           
         
       
